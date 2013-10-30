@@ -55,15 +55,15 @@ end
 
 # Create service
 #
-#template "/etc/init.d/elasticsearch" do
-#  source "elasticsearch.init.erb"
-#  owner 'root' and mode 0755
-#end
-#
-#service "elasticsearch" do
-#  supports :status => true, :restart => true
-#  action [ :enable ]
-#end
+template "/etc/init.d/elasticsearch" do
+  source "elasticsearch.init.erb"
+  owner 'root' and mode 0755
+end
+
+service "elasticsearch" do
+  supports :status => true, :restart => true
+  action [ :enable ]
+end
 
 # Download, extract, symlink the elasticsearch libraries and binaries
 #
