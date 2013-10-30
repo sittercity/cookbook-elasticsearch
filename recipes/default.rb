@@ -142,6 +142,3 @@ template "logging.yml" do
 
   notifies :restart, 'service[elasticsearch]' unless node.elasticsearch[:skip_restart]
 end
-
-
-include_recipe "opswatcher::elasticsearch"
